@@ -32,5 +32,15 @@ sfdx force:data:tree:export --query \
        (SELECT Name,Id FROM Contacts) \
        FROM Account" --prefix export-demo --outputdir data --plan
 
+#Create Second Generation Packaging
+sfdx force:package2:create --name RecuritingApp --containeroptions Unlocked
+
+#Create a version of the package using the force:package2:version:create command
+sfdx force:package2:version:create -d force-app
+
+#Install the package In PROD/Sandbox
+sfdx force:package:install -i <packageVersionId>
+
+
 
 

@@ -2,7 +2,10 @@
   "packageDirectories": [
     {
       "path": "force-app",
-      "default": true
+      "default": true,
+      "id": "0Ho6A000000001dSAA",
+      "versionName": "Spring 18",
+      "versionNumber": "2.0.0.NEXT"
     },
     {
       "path": "force-app/main/utils"
