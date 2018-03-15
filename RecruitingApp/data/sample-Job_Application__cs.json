@@ -1,0 +1,36 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Job_Application__c",
+                "referenceId": "Job_Application__cRef1"
+            },
+            "Date_Applied__c": "2018-03-12",
+            "Position__c": "@Position__cRef1"
+        },
+        {
+            "attributes": {
+                "type": "Job_Application__c",
+                "referenceId": "Job_Application__cRef2"
+            },
+            "Date_Applied__c": "2018-03-06",
+            "Position__c": "@Position__cRef1"
+        },
+        {
+            "attributes": {
+                "type": "Job_Application__c",
+                "referenceId": "Job_Application__cRef3"
+            },
+            "Date_Applied__c": "2018-03-24",
+            "Position__c": "@Position__cRef1"
+        },
+        {
+            "attributes": {
+                "type": "Job_Application__c",
+                "referenceId": "Job_Application__cRef4"
+            },
+            "Date_Applied__c": "2018-03-16",
+            "Position__c": "@Position__cRef2"
+        }
+    ]
+}
