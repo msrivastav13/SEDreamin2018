@@ -1,0 +1,36 @@
+Create a Project
+
+#sfdx force:project:create -n <projectname>
+
+Authenticate to Dev Hub
+
+#sfdx force:auth:web:login -d -a DevHub
+
+sfdx force:config:set defaultdevhubusername=DevHub
+
+# Create a scratch org with alias testOrg
+sfdx force:org:create -s -f config/project-scratch-def.json -a testOrg
+
+# Set an existing scratch org as default
+sfdx force:config:set defaultusername=<username|alias>
+
+# Open the scratch org with alias 'testOrg' in browser
+sfdx force:org:open -u testOrg
+
+# Convert source code to a package. Be ready to deploy to sandbox
+sfdx force:source:convert -d mdapi/ --packagename package_name
+
+# Authenticate to Dev Hub
+sfdx force:auth:web:login -d -a DevOrg 
+
+# Deploy to connected environment without running test; wait 5mins for the report
+sfdx force:mdapi:deploy -d mdapi/ -u devOrg -l NoTestRun -w 5
+
+#Data Commands
+sfdx force:data:tree:export --query \
+      "SELECT Id,Name, \
+       (SELECT Name,Id FROM Contacts) \
+       FROM Account" --prefix export-demo --outputdir data --plan
+
+
+
