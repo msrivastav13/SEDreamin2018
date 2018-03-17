@@ -1,5 +1,5 @@
 # Create a Project
-sfdx force:project:create -n <projectname>
+sfdx force:project:create -n <<projectname>>
 
 # Authenticate to Dev Hub
 sfdx force:auth:web:login -d -a DevHub
@@ -38,7 +38,7 @@ sfdx force:package2:create --name RecuritingApp --containeroptions Unlocked
 sfdx force:package2:version:create -d force-app
 
 # Install the package In PROD/Sandbox
-sfdx force:package:install -i <packageVersionId>
+sfdx force:package:install -i <<packageVersionId>>
 
 
 
