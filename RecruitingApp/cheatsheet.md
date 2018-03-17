@@ -38,4 +38,4 @@ sfdx force:package2:create --name RecuritingApp --containeroptions Unlocked
 sfdx force:package2:version:create -d force-app
 
 # Install the package In PROD/Sandbox
-sfdx force:package:install -i packageVersionId
+sfdx force::package:install -i packageVersionId
