@@ -1,11 +1,10 @@
-#Create a Project
-
+# Create a Project
 sfdx force:project:create -n <projectname>
 
-#Authenticate to Dev Hub
+# Authenticate to Dev Hub
 sfdx force:auth:web:login -d -a DevHub
 
-#Set as Default Devhub
+# Set as Default Devhub
 sfdx force:config:set defaultdevhubusername=DevHub
 
 # Create a scratch org with alias testOrg
@@ -26,19 +25,19 @@ sfdx force:auth:web:login -d -a DevOrg
 # Deploy to connected environment without running test; wait 5mins for the report
 sfdx force:mdapi:deploy -d mdapi/ -u devOrg -l NoTestRun -w 5
 
-#Data Export Commands
+# Data Export Commands
 sfdx force:data:tree:export --query \
       "SELECT Id,Name, \
        (SELECT Name,Id FROM Contacts) \
        FROM Account" --prefix export-demo --outputdir data --plan
 
-#Create Second Generation Packaging
+# Create Second Generation Packaging
 sfdx force:package2:create --name RecuritingApp --containeroptions Unlocked
 
-#Create a version of the package using the force:package2:version:create command
+# Create a version of the package using the force:package2:version:create command
 sfdx force:package2:version:create -d force-app
 
-#Install the package In PROD/Sandbox
+# Install the package In PROD/Sandbox
 sfdx force:package:install -i <packageVersionId>
 
 
